@@ -55,6 +55,42 @@ const localisations = {
         'attachment-category-fore-grip': 'Fore Grip',
         'attachment-category-grip': 'Grip',
         'attachment-category-stock': 'Stock',
+        'attachment-grip-perforated':'Perforated Grip',
+        'attachment-car4-barrel-default':'Default',
+        'attachment-stock-tq':'TQ',
+        'attachment-sight-none':'None',
+        'attachment-car4-mag-extended':'Extended Mag',
+        'attachment-barrel-ext-express':'Express Muzzle Break',
+        'attachment-grip-biofit':'Biofit Grip',
+        'attachment-car4-mag-quick':'Quick-Pull Mag',
+        'attachment-barrel-ext-piped-silencer':'Piped Silencer',
+        'attachment-car4-grip-default':'Default',
+        'attachment-barrel-ext-cylindric-silencer':'Cylindric Silencer',
+        'attachment-vertical-grip-quick-hold':'Quick Hold Grip',
+        'attachment-barrel-ext-hybrid-mb':'Hybrid Muzzle Break',
+        'attachment-car4-barrel-cqc':'CQC Barrel',
+        'attachment-stock-padded-tube':'Padded Tube',
+        'attachment-barrel-ext-beveled-silencer':'Beveled Silencer',
+        'attachment-sight-view-point':'Viewpoint Sight',
+        'attachment-vertical-grip-none':'None',
+        'attachment-sight-lined':'Lined Sight',
+        'attachment-vertical-grip-angled-ghost':'Angled Ghost Grip',
+        'attachment-vertical-grip-cylinder':'Cylinder Grip',
+        'attachment-car4-barrel-ext-default':'Default',
+        'attachment-car4-mag-default':'Default',
+        'attachment-sight-projection':'Projection RDS',
+        'attachment-car4-mag-compact':'Compact Mag',
+        'attachment-sight-classic-rds':'Classic RDS',
+        'attachment-car4-stock-default':'Default',
+        'attachment-stock-light-frame':'Light Frame',
+        'attachment-sight-compact':'Compact RDS',
+        'attachment-grip-tac':'Tac Grip',
+        'attachment-barrel-ext-indent-comp':'Indent Compensator',
+        'attachment-vertical-grip-stub':'Stub Grip',
+        'attachment-sight-tactical':'Tactical Sight',
+        'attachment-car4-barrel-ranged':'Ranged Barrel',
+        'attachment-sight-sheath':'Sheath RDS',
+        'attachment-stock-hq':'HQ',
         'stats-damage': 'Damage',
         'stats-critical-multiplier': 'Multiplier',
         'stats-armor-penetration': 'Armor Pen',
@@ -394,6 +430,7 @@ const localisations = {
         'attachment-category-fore-grip': 'Передняя рукоять',
         'attachment-category-grip': 'Рукоять',
         'attachment-category-stock': 'Приклад',
+        'attachment-none': 'Ничего',
         'stats-damage': 'Урон',
         'stats-critical-multiplier': 'Множитель',
         'stats-armor-penetration': 'Пробивание брони',
@@ -535,7 +572,6 @@ function setLocale(locale) {
     currentLocale = locale;
 
     localStorage.setItem('locale', locale);
-
     return document
         .querySelectorAll('[data-localisation-key]')
         .forEach((element) => {
@@ -558,7 +594,7 @@ function localise(element) {
             return (element.innerText = shotsDeclension(variables));
 
         for (const variable in variables) {
-            console.log(variable);
+            //console.log(variable);
             localisation = localisation.replaceAll(
                 `{{${variable}}}`,
                 variables[variable]
