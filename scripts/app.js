@@ -865,7 +865,14 @@ function populateLoadout(selectedWeapon) {
                         .replace(/([a-z])([A-Z0-9])/g, '$1 $2');
 
                 attachmentLabel.setAttribute('for', id);
-                attachmentLabel.innerHTML = attachmentName;
+
+                if(currentLocale != 'en') {
+                attachmentLabel.setAttribute(
+                    'data-localisation-key',
+                    'attachment-' + id
+                )
+                console.log("'attachment-" + id +"':'"+attachmentName+"'");
+            } else attachmentLabel.innerHTML = attachmentName;
 
                 attachmentInput.addEventListener('change', () => {
                     updateAttachments();
